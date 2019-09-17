@@ -1,29 +1,25 @@
 /* 
  * File:   overbejt_hw3.h
  * Author: Josh Overbeck
- * Description: This is the header file for homework assignment 3 in CSE 381.
- *
- * Created on September 17, 2019, 2:17 PM
- * copyright (c) 2019 overbejt@miamioh.edu
+ *Description: This is for homework 3 assignment in CSE 381.
+ * 
+ * Created on September 17, 2019, 7:26 PM
+ * Copyright (c) 2019 overbejt@miamioh.edu
  */
 
 #ifndef OVERBEJT_HW3_H
 #define OVERBEJT_HW3_H
 
-#include <unordered_map>
 #include <string>
+#include <unordered_map>
 
-class overbejt_hw3{
+class Overbejt {
 private:
     std::unordered_map<int, int> pid_ppid;
     std::unordered_map<int, std::string> pid_cmd;
 public:
-    // Constructor
-    overbejt_hw3() {};
-    // Destructor
-    ~overbejt_hw3(){};
-    
-    // Utility methods
+    Overbejt();
+    ~Overbejt();
     void loadData();
     void printTree();
 };
