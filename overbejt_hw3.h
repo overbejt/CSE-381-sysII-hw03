@@ -9,8 +9,7 @@
 
 #ifndef OVERBEJT_HW3_H
 #define OVERBEJT_HW3_H
-
-
-
+class overbejt_hw3{  
+};
 #endif /* OVERBEJT_HW3_H */
 
