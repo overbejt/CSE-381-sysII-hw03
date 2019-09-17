@@ -3,12 +3,12 @@
  * Author: Josh Overbeck
  * Description: This is for homework 3 assignment in CSE 381.
  * 
- *
  * Created on September 17, 2019, 7:37 PM
  * copyright (c) 2019 overbejt@miamioh.edu
  */
 
 #include <iostream>
+#include "overbejt_hw3.h"
 
 using namespace std;
 
@@ -20,3 +20,7 @@ int main(int argc, char** argv) {
     return 0;
 }  // End of the 'main' method
 
+Overbejt::Overbejt() {}
+Overbejt::~Overbejt() {}
+void Overbejt::loadData() {}
+void Overbejt::printTree() {}
