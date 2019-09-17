@@ -15,7 +15,7 @@
 
 class overbejt_hw3{
 private:
-    std::unordered_map<int, int> pid_pid;
+    std::unordered_map<int, int> pid_ppid;
     std::unordered_map<int, std::string> pid_cmd;
 public:
     overbejt_hw3() {
