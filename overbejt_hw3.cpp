@@ -7,6 +7,8 @@
  * Copyright (c) 2019 overbejt@miamioh.edu
  */
 #include "overbejt_hw3.h"
+#include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -14,6 +16,9 @@ using namespace std;
  * 
  */
 int main(int argc, char** argv) {
+    cout << "Let's do this!" << endl;
     return 0;
 }  // End of the 'main' method
+
+
 

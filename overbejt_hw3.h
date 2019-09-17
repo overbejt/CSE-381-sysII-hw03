@@ -18,8 +18,12 @@ private:
     std::unordered_map<int, int> pid_ppid;
     std::unordered_map<int, std::string> pid_cmd;
 public:
-    overbejt_hw3() {
-    };
+    // Constructor
+    overbejt_hw3() {};
+    // Destructor
+    ~overbejt_hw3(){};
+    
+    // Utility methods
     void loadData();
     void printTree();
 };
