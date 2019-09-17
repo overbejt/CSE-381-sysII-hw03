@@ -6,8 +6,7 @@
  * Created on September 17, 2019, 2:16 PM
  * Copyright (c) 2019 overbejt@miamioh.edu
  */
-
-#include <cstdlib>
+#include "overbejt_hw3.h"
 
 using namespace std;
 
@@ -16,5 +15,5 @@ using namespace std;
  */
 int main(int argc, char** argv) {
     return 0;
-}
+}  // End of the 'main' method
 
