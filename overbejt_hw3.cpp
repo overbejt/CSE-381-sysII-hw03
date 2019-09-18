@@ -10,6 +10,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <sstream>
 #include "overbejt_hw3.h"
 
 using namespace std;
@@ -26,9 +27,16 @@ Overbejt::~Overbejt() {}
 void Overbejt::loadData(std::string file) {
     cout << "Loading Data..." << endl;  // Testing*******************
     ifstream is(file);
-    string line;
+    string line, uid, stime, tty, time, cmd;
+    int pid, ppid, c;
+    
     while (getline(is, line)) {
-        cout << line << endl;
+        cout << line << endl;  // Testing*******************
+        stringstream ss(line);
+        ss >> uid >> pid >> ppid >> c >> stime >> tty >> time >> cmd;
+        
+        Overbejt::pid_ppid.insert({pid, ppid});
+        Overbejt::pid_cmd.insert({pid, cmd});        
     }
     cout << "Finished reading...." << endl;
 }  // End of the 'loadData' method
