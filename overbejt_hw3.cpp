@@ -11,7 +11,6 @@
 #include <string>
 #include <fstream>
 #include <sstream>
-#include <vector>
 #include "overbejt_hw3.h"
 
 using namespace std;
