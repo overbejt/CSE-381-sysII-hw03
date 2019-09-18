@@ -12,6 +12,12 @@
 
 using namespace std;
 
+// Constructor
+Overbejt::Overbejt() {}
+Overbejt::~Overbejt() {}
+void Overbejt::loadData() {}
+void Overbejt::printTree() {}
+
 /*
  * 
  */
@@ -19,8 +25,3 @@ int main(int argc, char** argv) {
     cout << "Let's do this!" << endl;
     return 0;
 }  // End of the 'main' method
-
-Overbejt::Overbejt() {}
-Overbejt::~Overbejt() {}
-void Overbejt::loadData() {}
-void Overbejt::printTree() {}
