@@ -34,5 +34,8 @@ void Overbejt::printTree() {}
  */
 int main(int argc, char** argv) {
     cout << "Let's do this!" << endl;
+    for (size_t i = 0; i < argc; i++) {
+        cout << argv[i] << endl;
+    }
     return 0;
 }  // End of the 'main' method

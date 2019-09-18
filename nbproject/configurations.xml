@@ -26,6 +26,7 @@
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
+    <itemPath>proc_info1.txt</itemPath>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -49,6 +50,8 @@
       <item path="overbejt_hw3.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="overbejt_hw3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="proc_info1.txt" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -80,6 +83,8 @@
       <item path="overbejt_hw3.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="overbejt_hw3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="proc_info1.txt" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>
