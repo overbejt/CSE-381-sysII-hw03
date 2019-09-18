@@ -22,7 +22,7 @@ public:
     Overbejt();
     ~Overbejt();
     void loadData(std::string inFile);
-    void printTree();
+    void printTree(uint pid);
 };
 #endif /* OVERBEJT_HW3_H */
 

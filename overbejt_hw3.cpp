@@ -46,8 +46,10 @@ void Overbejt::loadData(std::string file) {
  * will recursively find the tree of the pid supplied by the user in the 
  * arguments.
  */
-void Overbejt::printTree() {
+void Overbejt::printTree(uint pid) {
     cout << "Printing Tree...." << endl;  // Testing*******************
+    
+    cout << "Finished printing the process tree...." << endl;  // Testing*******
 }  // End of the 'printTree' method
 
 /*
@@ -69,8 +71,10 @@ int main(int argc, char** argv) {
     // Load the data into the map
     overbejt.loadData(DATA);
     
+    const int& PID = atoi(argv[2]);
     // Trace out the tree from the command
-    overbejt.printTree();
+    cout << "Process tree for PID: " << PID << endl;
+    overbejt.printTree(PID);
     
     return 0;
 }  // End of the 'main' method
