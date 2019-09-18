@@ -9,6 +9,7 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
 #include "overbejt_hw3.h"
 
 using namespace std;
@@ -22,8 +23,14 @@ Overbejt::~Overbejt() {}
  * This is a utility method for loading the data.  It will use the file that 
  * the user specified in args.  
  */
-void Overbejt::loadData() {
+void Overbejt::loadData(std::string file) {
     cout << "Loading Data..." << endl;  // Testing*******************
+    ifstream is(file);
+    string line;
+    while (getline(is, line)) {
+        cout << line << endl;
+    }
+    cout << "Finished reading...." << endl;
 }  // End of the 'loadData' method
 
 /**
@@ -41,20 +48,18 @@ void Overbejt::printTree() {
 int main(int argc, char** argv) {
     cout << "Let's do this!" << endl;
     // Create an overbejt object
-    Overbejt overbejt;
-    
-    // Load the data into the map
-    overbejt.loadData();
+    Overbejt overbejt;        
         
     // Loop through the user supplied arguments
-    for (size_t i = 0; i < argc; i++) {
-        cout << argv[i] << endl;
-    }  // Testing*******************
-    
-    const string& path(argv[0]);
-    const string& file_name(argv[1]);
-    string DATA(path + file_name);
+//    for (size_t i = 0; i < argc; i++) {
+//        cout << argv[i] << endl;
+//    }  // Testing*******************
+        
+    const string& DATA(argv[1]);
     cout << DATA << endl;  // Testing*******************
+    
+    // Load the data into the map
+    overbejt.loadData(DATA);
     
     // Trace out the tree from the command
     overbejt.printTree();

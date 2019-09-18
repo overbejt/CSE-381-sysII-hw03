@@ -17,11 +17,11 @@ class Overbejt {
 private:
     std::unordered_map<int, int> pid_ppid;
     std::unordered_map<int, std::string> pid_cmd;
-    std::string data_file;
+    
 public:
     Overbejt();
     ~Overbejt();
-    void loadData();
+    void loadData(std::string inFile);
     void printTree();
 };
 #endif /* OVERBEJT_HW3_H */
