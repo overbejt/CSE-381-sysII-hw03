@@ -26,20 +26,18 @@ Overbejt::~Overbejt() {}
  * the user specified in args.  
  */
 void Overbejt::loadData(std::string file) {
-    cout << "Loading Data..." << endl;  // Testing*******************
     ifstream is(file);
     string line, uid, stime, tty, time, cmd;
     int pid, ppid, c;
     
     while (getline(is, line)) {
-//        cout << line << endl;  // Testing*******************
         stringstream ss(line);
-        ss >> uid >> pid >> ppid >> c >> stime >> tty >> time >> cmd;
+        ss >> uid >> pid >> ppid >> c >> stime >> tty >> time;
+        getline(ss, cmd);
         
         Overbejt::pid_ppid.insert({pid, ppid});
         Overbejt::pid_cmd.insert({pid, cmd});        
     }
-    cout << "Finished reading...." << endl;
 }  // End of the 'loadData' method
 
 /**
@@ -48,7 +46,6 @@ void Overbejt::loadData(std::string file) {
  * arguments.
  */
 void Overbejt::printTree(uint pid) {
-//    cout << "Printing Tree...." << endl;  // Testing*******************
     const auto &ppid = Overbejt::pid_ppid.find(pid)->second;
     const auto &cmd = Overbejt::pid_cmd.find(pid)->second;
     
@@ -61,24 +58,14 @@ void Overbejt::printTree(uint pid) {
         // Recursively call this method until hit the root
         this->printTree(ppid);
     }
-//    cout << "Finished printing the process tree...." << endl;  // Testing****
 }  // End of the 'printTree' method
 
 /*
  * This is the main method.  It will be the driver for this class.  
  */
 int main(int argc, char** argv) {
-    cout << "Let's do this!" << endl;
     // Create an overbejt object
     Overbejt overbejt;        
-        
-    // Loop through the user supplied arguments
-//    for (size_t i = 0; i < argc; i++) {
-//        cout << argv[i] << endl;
-//    }  // Testing*******************
-        
-    
-//    cout << DATA << endl;  // Testing*******************
     
     // Load the data into the map
     const string& DATA(argv[1]);
@@ -86,7 +73,6 @@ int main(int argc, char** argv) {
     
     // Trace out the tree from the command
     const int& PID = atoi(argv[2]);  
-    
     cout << "Process tree for PID: " << PID << endl;
     cout << "PID";
     cout << setw(11) << "PPID";
