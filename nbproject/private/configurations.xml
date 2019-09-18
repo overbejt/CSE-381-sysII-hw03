@@ -25,10 +25,11 @@
       <runprofile version="9">
         <runcommandpicklist>
           <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
-          <runcommandpicklistitem>"${OUTPUT_PATH}" proc_info1.txt 1</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" proc_info1.txt 27426</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" proc_info1.txt 27535</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" proc_info1.txt 1</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" proc_info1.txt 27426</runcommand>
+        <runcommand>"${OUTPUT_PATH}" proc_info1.txt 1</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
         <terminal-type>0</terminal-type>

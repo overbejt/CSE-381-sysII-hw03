@@ -51,9 +51,9 @@ void Overbejt::printTree(uint pid) {
     const auto &cmd = Overbejt::pid_cmd.find(pid)->second;
         
     stringstream io;
-    io << right << setw(5) << pid;
-    io << right << setw(10) << ppid;
-    io << "  " << cmd << endl;
+    io << setw(7) << left << pid << setw(7) << ppid << cmd;
+//    io << "  " << cmd << endl;
+    io << endl;
     Overbejt::reverseList.push_back(io.str());
     
     
@@ -63,12 +63,12 @@ void Overbejt::printTree(uint pid) {
         // Recursively call this method until hit the root
         this->printTree(ppid);
     } else {
-//        for (auto i : Overbejt::reverseList) {
-//            cout << i;
-//        }
+        // When at root, print it out in reverse order
         for (size_t i = Overbejt::reverseList.size() - 1; i > 0; i--) {
             cout << Overbejt::reverseList.at(i);
         }
+        // Print last one
+        cout << Overbejt::reverseList.at(0);
     }
 }  // End of the 'printTree' method
 
@@ -86,9 +86,9 @@ int main(int argc, char** argv) {
     // Trace out the tree from the command
     const int& PID = atoi(argv[2]);  
     cout << "Process tree for PID: " << PID << endl;
-    cout << "PID";
-    cout << setw(11) << "PPID";
-    cout << "   " << "CMD"<< endl;
+    cout << left << setw(7) << "PID";
+    cout << left << setw(7) << "PPID";
+    cout << "CMD"<< endl;
     overbejt.printTree(PID);
     
     return 0;
