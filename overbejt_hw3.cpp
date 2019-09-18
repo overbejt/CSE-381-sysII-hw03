@@ -11,6 +11,7 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+#include <iomanip>
 #include "overbejt_hw3.h"
 
 using namespace std;
@@ -65,15 +66,17 @@ int main(int argc, char** argv) {
 //        cout << argv[i] << endl;
 //    }  // Testing*******************
         
-    const string& DATA(argv[1]);
-    cout << DATA << endl;  // Testing*******************
+    
+//    cout << DATA << endl;  // Testing*******************
     
     // Load the data into the map
+    const string& DATA(argv[1]);
     overbejt.loadData(DATA);
     
-    const int& PID = atoi(argv[2]);
     // Trace out the tree from the command
+    const int& PID = atoi(argv[2]);    
     cout << "Process tree for PID: " << PID << endl;
+    cout << "PID" << setw(10) << "PPID" << setw(10) << "CMD" << endl;
     overbejt.printTree(PID);
     
     return 0;
