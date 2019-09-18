@@ -8,6 +8,7 @@
  */
 
 #include <iostream>
+#include <string>
 #include "overbejt_hw3.h"
 
 using namespace std;
@@ -22,15 +23,16 @@ Overbejt::~Overbejt() {}
  * the user specified in args.  
  */
 void Overbejt::loadData() {
-    cout << "Loading Data..." << endl;
+    cout << "Loading Data..." << endl;  // Testing*******************
 }  // End of the 'loadData' method
 
 /**
  * This is a utility method for printing the process tree to the screen.  It 
- * will recursively find the tree of the pid supplied by the uesr in the args.
+ * will recursively find the tree of the pid supplied by the user in the 
+ * arguments.
  */
 void Overbejt::printTree() {
-    cout << "Printing Tree...." << endl;
+    cout << "Printing Tree...." << endl;  // Testing*******************
 }  // End of the 'printTree' method
 
 /*
@@ -47,7 +49,12 @@ int main(int argc, char** argv) {
     // Loop through the user supplied arguments
     for (size_t i = 0; i < argc; i++) {
         cout << argv[i] << endl;
-    }
+    }  // Testing*******************
+    
+    const string& path(argv[0]);
+    const string& file_name(argv[1]);
+    string DATA(path + file_name);
+    cout << DATA << endl;  // Testing*******************
     
     // Trace out the tree from the command
     overbejt.printTree();

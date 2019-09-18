@@ -17,6 +17,7 @@ class Overbejt {
 private:
     std::unordered_map<int, int> pid_ppid;
     std::unordered_map<int, std::string> pid_cmd;
+    std::string data_file;
 public:
     Overbejt();
     ~Overbejt();
