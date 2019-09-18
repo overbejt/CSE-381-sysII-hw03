@@ -11,7 +11,6 @@
 #include <string>
 #include <fstream>
 #include <sstream>
-#include <iomanip>
 #include <vector>
 #include "overbejt_hw3.h"
 
@@ -55,8 +54,7 @@ void Overbejt::printTree(uint pid) {
         
     // Build string for console and push onto the vector
     stringstream io;
-    io << setw(7) << left << pid << setw(7) << ppid << cmd;
-    io << endl;
+    io << pid << '\t' << ppid << '\t' << cmd << endl;
     Overbejt::reverseList.push_back(io.str());
            
     // Check if not at root of tree
@@ -87,9 +85,7 @@ int main(int argc, char** argv) {
     // Print out the top label
     const int& PID = atoi(argv[2]);  
     cout << "Process tree for PID: " << PID << endl;
-    cout << left << setw(7) << "PID";
-    cout << left << setw(7) << "PPID";
-    cout << "CMD"<< endl;
+    cout << "PID\tPPID\tCMD"<< endl;
     // Trace out the tree from the command the user entered
     overbejt.printTree(PID);
     
