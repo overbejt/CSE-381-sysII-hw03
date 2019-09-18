@@ -48,8 +48,19 @@ void Overbejt::loadData(std::string file) {
  * arguments.
  */
 void Overbejt::printTree(uint pid) {
-    cout << "Printing Tree...." << endl;  // Testing*******************
+//    cout << "Printing Tree...." << endl;  // Testing*******************
+    const auto &ppid = Overbejt::pid_ppid.find(pid)->second;
+    const auto &cmd = Overbejt::pid_cmd.find(pid)->second;
     
+    cout << pid << setw(10);
+    cout << ppid << setw(20);
+    cout << cmd << endl;
+    
+    // Check if not at root of tree
+    if (pid > 1) {
+        // Recursively call this method until hit the root
+        this->printTree(ppid);
+    }
     cout << "Finished printing the process tree...." << endl;  // Testing*******
 }  // End of the 'printTree' method
 
@@ -76,7 +87,9 @@ int main(int argc, char** argv) {
     // Trace out the tree from the command
     const int& PID = atoi(argv[2]);    
     cout << "Process tree for PID: " << PID << endl;
-    cout << "PID" << setw(10) << "PPID" << setw(10) << "CMD" << endl;
+    cout << "PID" << setw(11);
+    cout << "PPID" << setw(10);
+    cout << "CMD"<< endl;
     overbejt.printTree(PID);
     
     return 0;
