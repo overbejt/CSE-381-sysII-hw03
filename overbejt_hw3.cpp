@@ -12,6 +12,7 @@
 #include <fstream>
 #include <sstream>
 #include <iomanip>
+#include <vector>
 #include "overbejt_hw3.h"
 
 using namespace std;
@@ -48,15 +49,26 @@ void Overbejt::loadData(std::string file) {
 void Overbejt::printTree(uint pid) {
     const auto &ppid = Overbejt::pid_ppid.find(pid)->second;
     const auto &cmd = Overbejt::pid_cmd.find(pid)->second;
+        
+    stringstream io;
+    io << right << setw(5) << pid;
+    io << right << setw(10) << ppid;
+    io << "  " << cmd << endl;
+    Overbejt::reverseList.push_back(io.str());
     
-    cout << right << setw(5) << pid;
-    cout << right << setw(10) << ppid;
-    cout << "  " << cmd << endl;
+    
     
     // Check if not at root of tree
     if (pid > 1) {
         // Recursively call this method until hit the root
         this->printTree(ppid);
+    } else {
+//        for (auto i : Overbejt::reverseList) {
+//            cout << i;
+//        }
+        for (size_t i = Overbejt::reverseList.size() - 1; i > 0; i--) {
+            cout << Overbejt::reverseList.at(i);
+        }
     }
 }  // End of the 'printTree' method
 

@@ -11,12 +11,15 @@
 #define OVERBEJT_HW3_H
 
 #include <string>
+#include <iostream>
+#include <vector>
 #include <unordered_map>
 
 class Overbejt {
 private:
     std::unordered_map<int, int> pid_ppid;
     std::unordered_map<int, std::string> pid_cmd;
+    std::vector<std::string> reverseList;
     
 public:
     Overbejt();
