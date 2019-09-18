@@ -26,8 +26,9 @@
         <runcommandpicklist>
           <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" proc_info1.txt 1</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" proc_info1.txt 27426</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" proc_info1.txt 1</runcommand>
+        <runcommand>"${OUTPUT_PATH}" proc_info1.txt 27426</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
         <terminal-type>0</terminal-type>
